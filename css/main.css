@@ -244,12 +244,17 @@ ul li a{
     background-size: 400px;
     box-shadow: -5px 5px 20px;
     background-position: center
+    transition:.5s;
 }
 .image img{
     width: 300px;
     height: 300px;
     transform: translate(-60px, 0px);
     border-radius: 182px;
+    transition:.5s;
+}
+.image:hover{
+    over-flow:hidden;
 }
 .text h1{
     margin-left: 20px;
