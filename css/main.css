@@ -243,7 +243,7 @@ ul li a{
     border-radius: 113px;
     background-size: 400px;
     box-shadow: -5px 5px 20px;
-    background-position: center
+    background-position: center;
     transition:.5s;
 }
 .image img{
@@ -254,7 +254,7 @@ ul li a{
     transition:.5s;
 }
 .image:hover{
-    over-flow:hidden;
+    overflow:hidden;
 }
 .text h1{
     margin-left: 20px;
