@@ -107,6 +107,26 @@ ul{
 li{
     margin-left: 30px;
     transition: .9s;
+    position: relative;
+}
+li:hover::before{
+    width: 100%;
+}
+li::before{
+    content: "";
+    width: 0;
+    transition: .5s;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    height: 2px;
+}
+ul li:last-child::before{
+    content: "";
+    background-color: transparent;
+}
+.contact_header{
+    border-bottom:1px solid transparent ;
 }
 ul li a{
     text-decoration: none;
@@ -127,99 +147,69 @@ ul li a{
 .contact_header{
     color: var(--main-color);
 }
-@media  (max-width: 767px) {
-    li{
-        margin-left: 10px;
-    }
-    ul li a{
-        font-size: 10px;
-    }
-    .contact_header{
-        width: 45px;
-        white-space: nowrap;
-        height: 20px;
-        font-size: 9px;
-        transform: translatey(3px);
-    }
-}
-/* @media (max-width: 767px) {
+@media  (min-width: 767px){
     .line{
-        position: relative;
+        display: none;
     }
-    .line div{
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        margin-bottom: 5px;
-    }
-    .line::before{
+
+}
+@media  (max-width: 767px) {
+
+    header:hover::before,
+    header:hover::after{
+        display: block;
+    } 
+    header::before{
     content: "";
-    border-style: solid;
-    border-color: #5a494f transparent transparent transparent;
-    border-width: 10px;
-    right: 80px;;
-    bottom: -42px;
     display: none;
+    border-color: var(--text-color) transparent transparent transparent;
     position: absolute;
+    border-style: solid;
+    border-width: 15px;
+    bottom: -30px;
+    left: 15px;
+    }
+    header::after{
+        content: "";
+        border-color: var(--text-color) transparent transparent transparent;
+        position: absolute;
+        display: none;
+        border-style: solid;
+        border-width: 15px;
+        bottom: -30px;
+        right: 15px;
     }
     ul{
         display: none;
     }
     .line:hover+ul{
-        display: block;
-    }
-    .line:hover::before{
-        display: block;
-    }
-    ul{
-        height: 200px;
+        display: flex;
         position: absolute;
-        background-color: #5a494f;
-        right: 3px;
-        width: 90px;
-        top: 50px;
-        padding: 0;
-        padding-top: 15px;
-        border-radius: 10px;
+        top:100%;
+        transition: .5s;
+        transform: rotatey(0deg);
+        background-color: rgb(0, 0, 0,.6);
+        border-radius: 5px;
+        z-index: 3;
+        padding: 25px 0 15px 0; ;
+        flex-direction: column;
+        width: calc(100% - 30px );
+    }
+    li {
+        margin: 0;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+    }
+    line{
         transition: .5s;
     }
-    
-    ul:hover{
-        display: block;
+    .line i{
+        color: white;
+        font-size: 30px;
     }
-    li{
-        margin-left: 0px;
-        margin: auto;
-        margin-bottom: 15px;
-        border-bottom: 1px solid var(--seconde-color);
-        width: 50%;
-        text-align: center;
-        padding-bottom: 10px;
-    }
-    li a:hover{
-        color: var(--seconde-color);
-    }
-    ul li a{
-        font-size: 10px;
-        margin-bottom: 10px;
-    }
-    .contact_header{
-        background-color: var(--seconde-color);
-        width: 50px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .contact_header{
-        font-size: 10px;
-        white-space: nowrap;
-        color: var(--main-color);
-    }
-    .contact_header a:hover{
-        color: var(--text-color);
-    }
-} */
+
+}
+
 /* end_header */
 
 /* start_home */
@@ -243,18 +233,13 @@ ul li a{
     border-radius: 113px;
     background-size: 400px;
     box-shadow: -5px 5px 20px;
-    background-position: center;
-    transition:.5s;
+    background-position: center
 }
 .image img{
     width: 300px;
     height: 300px;
     transform: translate(-60px, 0px);
     border-radius: 182px;
-    transition:.5s;
-}
-.image:hover{
-    overflow:hidden;
 }
 .text h1{
     margin-left: 20px;
